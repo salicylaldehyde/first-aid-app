@@ -66,7 +66,7 @@ const lessons=[
 <h3>When to Call for Help</h3>
 <p>For severe pain, deformity, exposed bone, or suspected head/neck/spinal injuries, call emergency services immediately and do not move the person.</p>
 `},
-{id:"shock",title:"Treating for Shock",videoUrl: "https://www.youtube.com/watch?v=61urGQrmeNM"content:`
+{id:"shock",title:"Treating for Shock",videoUrl: "https://www.youtube.com/watch?v=61urGQrmeNM",content:`
 <h3>Life-Threatening Condition</h3>
 <p>Shock is a life-threatening condition that can occur with many severe injuries or illnesses due to poor circulation. <strong>Call emergency services immediately.</strong></p>
 <ol>
