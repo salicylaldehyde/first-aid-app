@@ -440,4 +440,40 @@ nav .btn {
         flex: 1 1 40%; /* Allows two buttons per row on small screens */
         font-size: 0.9rem;
     }
+    .container {
+        width: 95%; 
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    /* 2. Adjust Quiz Question Text */
+    .quiz-question {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    /* 3. Make Quiz Options easier to tap (bigger targets) */
+    .quiz-option {
+        padding: 12px;
+        margin-bottom: 10px;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        display: block; /* Ensures it fills the width */
+    }
+
+    /* 4. Ensure the Submit button is big and easy to press */
+    #quiz-form button[type="submit"] {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    /* 5. Fix Lesson Detail Box (where the quiz often lives) */
+    .lesson-detail-box {
+        padding: 15px;
+        font-size: 1rem;
+    }
 }
