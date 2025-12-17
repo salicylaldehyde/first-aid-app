@@ -1,5 +1,5 @@
 const lessons=[
-{id:"drsabcd",title:"DRSABCD & Unresponsive Patient Care",content:`<h3>Unresponsive and Not Breathing (Cardiac Arrest)</h3>
+{id:"drsabcd",title:"DRSABCD & Unresponsive Patient Care",videoUrl:"https://www.youtube.com/watch?v=-NodDRTsV88",content:`<h3>Unresponsive and Not Breathing (Cardiac Arrest)</h3>
 <p>This requires immediate action to circulate blood and oxygen to the brain and other vital organs.</p>
 <h4>1. Confirm Unresponsiveness & Breathing (DRSB)</h4>
 <p><strong>D</strong>anger: Check the scene for safety. <strong>R</strong>esponse: Tap the person's shoulder and shout loudly, "Are you okay?". <strong>S</strong>end for Help: Have someone call emergency services and get an AED. <strong>B</strong>reathing: Quickly check for normal breathing (look, listen, and feel for no more than 10 seconds). Agonal gasps (irregular, sudden breaths) are not normal breathing and should be treated as not breathing.</p>
@@ -20,7 +20,7 @@ const lessons=[
 <li>Carefully roll the person onto their side towards you by pulling on the bent knee. The bent leg helps stabilize them.</li>
 </ol>
 <p>Stay with them and monitor their breathing and condition continuously until medical help arrives. </p>`},
-{id:"bleeding",title:"Managing Severe Bleeding",content:`
+{id:"bleeding",title:"Managing Severe Bleeding",videoUrl:"https://www.youtube.com/watch?v=gMMfl0wCxHM",content:`
 <h3>Controlling Blood Loss</h3>
 <p>The primary goal is to control blood loss and prevent shock. <strong>Call emergency services immediately.</strong></p>
 <ol>
@@ -31,7 +31,7 @@ const lessons=[
 <li><strong>Tourniquet (if necessary):</strong> If the bleeding is life-threatening (e.g., spurting blood) from an arm or leg and pressure does not stop it, or in mass casualty situations, a commercially made tourniquet can be used if available and you are trained. Place it 2 inches above the wound (not on a joint) and tighten it until the bleeding stops. Note the time the tourniquet was applied.</li>
 </ol>
 `},
-{id:"burns",title:"Burns and Scalds Treatment",content:`
+{id:"burns",title:"Burns and Scalds Treatment",videoUrl:"https://www.youtube.com/watch?v=XGnLkUty69g",content:`
 <h3>Immediate Cooling</h3>
 <p>Prompt cooling is key to reducing damage.</p>
 <ol>
@@ -44,7 +44,7 @@ const lessons=[
 <h3>When to Seek Help</h3>
 <p>Get professional help for large burns (larger than the person's hand), deep burns, burns to the face, hands, feet, or genitals, or chemical/electrical burns.</p>
 `},
-{id:"choking",title:"Choking Response",content:`
+{id:"choking",title:"Choking Response",videoUrl: "https://www.youtube.com/watch?v=HGBBu4zr8sM",content:`
 <h3>Conscious Adult or Child</h3>
 <p>For a conscious adult or child who cannot cough, talk, or breathe, alternate between back blows and abdominal thrusts.</p>
 <ol>
@@ -56,7 +56,7 @@ const lessons=[
 <p>Lower the person to the floor and begin CPR, checking the mouth for the object after each set of compressions.</p>
 <p><strong>Special Cases:</strong> For pregnant or obese people, use chest thrusts instead of abdominal thrusts. For infants, use a combination of back thumps and chest thrusts.</p>
 `},
-{id:"fractures",title:"Fractures and Sprains (RICE)",content:`
+{id:"fractures",title:"Fractures and Sprains (RICE)",videoUrl: "https://www.youtube.com/watch?v=2v8vlXgGXwE",content:`
 <h3>Immobilization and Pain Management</h3>
 <p>The goal is to prevent further injury and manage pain.</p>
 <ol>
@@ -66,7 +66,7 @@ const lessons=[
 <h3>When to Call for Help</h3>
 <p>For severe pain, deformity, exposed bone, or suspected head/neck/spinal injuries, call emergency services immediately and do not move the person.</p>
 `},
-{id:"shock",title:"Treating for Shock",content:`
+{id:"shock",title:"Treating for Shock",videoUrl: "https://www.youtube.com/watch?v=61urGQrmeNM"content:`
 <h3>Life-Threatening Condition</h3>
 <p>Shock is a life-threatening condition that can occur with many severe injuries or illnesses due to poor circulation. <strong>Call emergency services immediately.</strong></p>
 <ol>
@@ -80,7 +80,7 @@ const lessons=[
 `},
 {
 id: "allergic-reactions",
-title: "Managing Severe Allergic Reactions (Anaphylaxis)",
+title: "Managing Severe Allergic Reactions (Anaphylaxis)",videoUrl: "https://www.youtube.com/watch?v=ZYJPmC0DmQM&t=48s",
 content: `
 <h3>Severe Allergic Reactions (Anaphylaxis)</h3>
 <p>Severe allergic reactions are life-threatening and require immediate intervention.</p>
@@ -96,7 +96,7 @@ content: `
 {
 id: "drowning",
 title: "Drowning and Water Emergencies",
-content: `
+videoUrl: "https://www.youtube.com/watch?v=Hlrbio-NpxQ",content: `
 <h3>Responding to a Drowning Victim</h3>
 <p>Drowning is often silent; once the victim is out of the water, focus on restoring breathing and warmth.</p>
 <h4>Steps to take:</h4>
@@ -113,7 +113,7 @@ content: `
 {
 id: "poisoning",
 title: "Responding to Poisoning",
-content: `
+videoUrl: "https://www.youtube.com/watch?v=b2ieb8BZJuY",content: `
 <h3>Suspected Poisoning</h3>
 <p>Treatment varies significantly based on how the poison entered the body. Immediate action is critical.</p>
 <h4>Steps to take:</h4>
@@ -228,7 +228,7 @@ list.innerHTML+=`<div class='card'>
 function loadLesson(){
 const id=new URLSearchParams(location.search).get("id");
 const l=lessons.find(x=>x.id===id);
-document.getElementById("lesson-title").innerText=l.title;
+document.getElementById("lesson-title").innerHTML = `<a href="${l.videoUrl}" target="_blank" style="text-decoration: none; color: #000000;">${l.title} &#128250</a>`;
 document.getElementById("lesson-content").innerHTML=l.content; // Renders detailed HTML content
 document.getElementById("quiz-link").href=`quiz.html?lesson=${id}`;
 }
