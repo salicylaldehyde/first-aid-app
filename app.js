@@ -80,8 +80,7 @@ const lessons=[
 `},
 {
 id: "allergic-reactions",
-title: "Managing Severe Allergic Reactions (Anaphylaxis)",videoUrl: "https://www.youtube.com/watch?v=ZYJPmC0DmQM&t=48s",
-content: `
+title: "Managing Severe Allergic Reactions (Anaphylaxis)",videoUrl: "https://www.youtube.com/watch?v=ZYJPmC0DmQM&t=48s",content: `
 <h3>Severe Allergic Reactions (Anaphylaxis)</h3>
 <p>Severe allergic reactions are life-threatening and require immediate intervention.</p>
 <h4>Steps to take:</h4>
