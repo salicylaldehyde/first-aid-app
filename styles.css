@@ -379,17 +379,23 @@ nav .btn {
 .quiz-action-box .btn.big:hover {
     background: #005f91;
 }
-/* --- MOBILE RESPONSIVENESS (Fixes for Overlapping) --- */
+
 
 @media screen and (max-width: 768px) {
+    /* Force the body to fit the screen */
+    html, body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
     /* Fix Navigation Overlap */
     nav {
-        flex-direction: column;
+        flex-direction: column !important;
         padding: 15px !important; 
-        padding-left: 15px !important; 
-        padding-right: 15px !important;
         text-align: center;
         gap: 12px;
+        height: auto !important; /* Fixed: Added height auto */
+    } /* Fixed: Added missing closing brace here */
 
     nav h2 {
         margin: 0;
@@ -397,30 +403,36 @@ nav .btn {
     }
 
     .nav-btn {
-        width: 100%; /* Makes the button easy to tap on mobile */
+        width: 100% !important; /* Fixed: Added !important */
         margin-right: 0 !important;
     }
 
     /* Fix Hero Section Text */
+    .hero-new {
+        height: auto !important; /* Allows hero to grow if text is long */
+        padding: 50px 10px !important;
+    }
+
     .hero-new h1 {
-        font-size: 1.8rem; /* Reduces size so words don't break/overlap */
+        font-size: 1.8rem !important; 
         line-height: 1.2;
     }
 
     .hero-overlay {
-        padding: 40px 20px;
+        padding: 20px !important;
+        width: 90% !important;
     }
 
     /* Fix Training Modules Grid */
-    .grid {
-        grid-template-columns: 1fr !important; /* Forces 1 column instead of 2 or 3 */
+    .grid, .lesson-grid {
+        grid-template-columns: 1fr !important; 
         padding: 10px;
         gap: 15px;
     }
 
     /* Fix Chat (LiveAid) Input Area */
     .input-area {
-        flex-direction: column;
+        flex-direction: column !important;
         padding: 10px;
     }
 
@@ -430,45 +442,42 @@ nav .btn {
         border-radius: 8px !important;
     }
 
-    /* Fix Quick Action Buttons (Bleeding, Burns, etc) */
+    /* Fix Quick Action Buttons */
     .quick-actions {
         display: flex;
-        flex-wrap: wrap; /* Allows buttons to wrap to a new row */
+        flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
         padding: 10px;
     }
 
     .quick-actions button {
-        flex: 1 1 40%; /* Allows two buttons per row on small screens */
+        flex: 1 1 40%; 
         font-size: 0.9rem;
     }
+
     .container {
-        width: 95%; 
+        width: 100% !important; /* Fixed: set to 100% to fill screen */
         padding: 15px !important;
-        padding-left: 15px !important;  /* Added for extra safety */
-        padding-right: 15px !important; /* Added for extra safety */
         margin: 0 auto;
     }
 
-    /* 2. Adjust Quiz Question Text */
+    /* Adjust Quiz Styling */
     .quiz-question {
         font-size: 1.1rem;
         line-height: 1.4;
         margin-bottom: 15px;
     }
 
-    /* 3. Make Quiz Options easier to tap (bigger targets) */
     .quiz-option {
-        padding: 12px;
+        padding: 15px !important; /* Slightly larger for easier tapping */
         margin-bottom: 10px;
         background: white;
         border-radius: 8px;
         border: 1px solid #ddd;
-        display: block; /* Ensures it fills the width */
+        display: block; 
     }
 
-    /* 4. Ensure the Submit button is big and easy to press */
     #quiz-form button[type="submit"] {
         width: 100%;
         font-size: 1.2rem;
@@ -476,7 +485,6 @@ nav .btn {
         margin-top: 20px;
     }
 
-    /* 5. Fix Lesson Detail Box (where the quiz often lives) */
     .lesson-detail-box {
         padding: 15px;
         font-size: 1rem;
